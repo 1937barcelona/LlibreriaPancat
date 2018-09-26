@@ -25,18 +25,16 @@ fclose($arxiu);
 // Obtenir el text o dades en array, una per línia, de les etiquetes. //
 //Ignora les línies buides que pugui haver-hi al document. //
 $línies = file('PETIQ.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-// Mostra la llista de les entrades del document amb la numeració per línia. //
-foreach ($línies as $num_línia => $línia) {
-    echo "<b>{$num_línia}→</b>" . htmlspecialchars($línia) . "<br />\n";
-}
-?>
-<?php
-    <label for="Etiquetes">Etiquetes</label>
+// Mostra la llista de les entrades del document en un desplegable
+  <label for="Etiquetes actuals">Etiquetes</label>
     <select id="Etiquetes" name="Etiquetes">
-      foreach ($línies as $num_etiqueta => $meta_etiquetes) {
-        echo "<option value = htmlspecialchars($meta_etiquetes)> . $meta_etiquetes</option>";
-      } 
+$línies = file('PETIQ.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+foreach ($línies as $num_etiqueta => $meta_etiquetes) {
+        echo "<option value=htmlspecialchars($meta_etiquetes)>$meta_etiquetes</option>";
+      }
   ?>
+    </select>
+
     </select>
 </body>
 </html>
