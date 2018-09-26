@@ -30,5 +30,13 @@ foreach ($línies as $num_línia => $línia) {
     echo "<b>{$num_línia}→</b>" . htmlspecialchars($línia) . "<br />\n";
 }
 ?>
+<?php
+    <label for="Etiquetes">Etiquetes</label>
+    <select id="Etiquetes" name="Etiquetes">
+      foreach ($línies as $num_etiqueta => $meta_etiquetes) {
+        echo "<option value = htmlspecialchars($meta_etiquetes)> . $meta_etiquetes</option>";
+      } 
+  ?>
+    </select>
 </body>
 </html>
